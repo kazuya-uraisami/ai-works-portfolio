@@ -12,7 +12,7 @@
 <meta property="og:title" content="AI.Works ｜ AI開発・業務自動化ポートフォリオ">
 <meta property="og:description" content="生成AIを活用した業務自動化・チャットボット・情報配信システムの開発実績ポートフォリオ。">
 <meta property="og:url" content="https://kazuya-uraisami.github.io/ai-works-portfolio/">
-<meta property="og:image" content="https://kazuya-uraisami.github.io/ai-works-portfolio/image/IMG_5387.PNG">
+<meta property="og:image" content="https://kazuya-uraisami.github.io/ai-works-portfolio/image/hero.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f2540'/%3E%3Ctext x='50' y='68' font-size='52' font-family='Segoe UI,sans-serif' font-weight='800' text-anchor='middle' fill='%23fff'%3EA%3C/text%3E%3Ccircle cx='74' cy='60' r='7' fill='%231e5eff'/%3E%3C/svg%3E">
 <style>
@@ -51,8 +51,17 @@
   .nav .contact-btn:hover{background:var(--accent);color:#fff}
 
   /* Hero */
-  .hero{background:var(--bg-soft);border-bottom:1px solid var(--line)}
-  .hero-in{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;padding:88px 0}
+  .hero{
+    position:relative;overflow:hidden;border-bottom:1px solid var(--line);
+    background:var(--bg-soft) url('image/hero.jpg') no-repeat right center;
+    background-size:cover;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;z-index:0;
+    background:linear-gradient(90deg,rgba(244,246,251,.96) 0%,rgba(244,246,251,.88) 30%,rgba(244,246,251,.45) 50%,rgba(244,246,251,0) 68%);
+  }
+  .hero-in{position:relative;z-index:1;padding:104px 0;min-height:440px}
+  .hero-content{max-width:540px}
   .eyebrow{
     display:inline-block;font-size:13px;font-weight:700;letter-spacing:1.5px;color:var(--accent);
     text-transform:uppercase;margin-bottom:20px;
@@ -68,15 +77,15 @@
   .btn-p:hover{background:var(--accent)}
   .btn-s{border:1.5px solid var(--line);color:var(--navy);background:#fff}
   .btn-s:hover{border-color:var(--navy)}
-  .hero-visual{
-    background:#fff;border:1px solid var(--line);border-radius:12px;padding:28px;
-    box-shadow:0 24px 48px -24px rgba(15,37,64,.25);
-  }
-  .stat-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-  .stat{padding:18px;border-radius:8px;background:var(--bg-soft)}
-  .stat .num{font-size:30px;font-weight:800;color:var(--navy);line-height:1}
+  /* Metrics band */
+  .metrics{background:#fff;padding:64px 0}
+  .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .stat{padding:20px;border-radius:10px;background:var(--bg-soft);border:1px solid var(--line)}
+  .stat .num{font-size:28px;font-weight:800;color:var(--navy);line-height:1}
   .stat .lbl{font-size:13px;color:var(--sub);margin-top:8px}
-  .stat.full{grid-column:1/3}
+  .stat.full{grid-column:1/-1;display:flex;align-items:baseline;gap:18px;background:var(--navy);border-color:var(--navy)}
+  .stat.full .num{color:#fff}
+  .stat.full .lbl{color:#aebdd6;margin-top:0}
 
   /* Section base */
   section{padding:88px 0}
@@ -159,15 +168,22 @@
   .foot{display:flex;justify-content:space-between;align-items:center;color:var(--sub);font-size:13px}
 
   @media(max-width:860px){
-    .hero-in,.about{grid-template-columns:1fr;gap:40px}
+    .about{grid-template-columns:1fr;gap:40px}
     .nav ul{display:none}
     section{padding:56px 0}
-    .hero-in{padding:56px 0}
+    .hero{background-position:right -60px center}
+    .hero::before{background:linear-gradient(180deg,rgba(244,246,251,.9),rgba(244,246,251,.92))}
+    .hero-in{padding:64px 0;min-height:auto}
+    .hero-content{max-width:none}
     .steps{grid-template-columns:1fr 1fr}
     .trust-grid{grid-template-columns:1fr}
+    .stat-row{grid-template-columns:1fr 1fr}
+    .metrics{padding:44px 0}
   }
   @media(max-width:520px){
     .steps{grid-template-columns:1fr}
+    .stat-row{grid-template-columns:1fr}
+    .stat.full{flex-direction:column;gap:4px}
   }
 </style>
 </head>
@@ -189,7 +205,7 @@
 <!-- HERO -->
 <div class="hero">
   <div class="wrap hero-in">
-    <div>
+    <div class="hero-content">
       <span class="eyebrow">AI Development & Automation</span>
       <h1>業務を、<span class="u">動く仕組み</span>に。</h1>
       <div class="hero-sub">信頼できるAI開発・自動化パートナー</div>
@@ -200,17 +216,21 @@
       </div>
       <p class="cta-note">相談無料・見積もり無料・しつこい営業はありません。</p>
     </div>
-    <div class="hero-visual">
-      <div class="stat-row">
-        <div class="stat"><div class="num">毎日</div><div class="lbl">定時に自動プッシュ配信</div></div>
-        <div class="stat"><div class="num">24h</div><div class="lbl">無人で稼働</div></div>
-        <div class="stat"><div class="num">複数</div><div class="lbl">カテゴリ別に自動要約</div></div>
-        <div class="stat"><div class="num">0分</div><div class="lbl">情報収集の手作業</div></div>
-        <div class="stat full"><div class="num">生成AI × 業務自動化</div><div class="lbl">情報収集・要約・配信を一気通貫で構築</div></div>
-      </div>
-    </div>
   </div>
 </div>
+
+<!-- METRICS -->
+<section class="metrics">
+  <div class="wrap">
+    <div class="stat-row">
+      <div class="stat"><div class="num">毎日</div><div class="lbl">定時に自動プッシュ配信</div></div>
+      <div class="stat"><div class="num">24h</div><div class="lbl">無人で稼働</div></div>
+      <div class="stat"><div class="num">複数</div><div class="lbl">カテゴリ別に自動要約</div></div>
+      <div class="stat"><div class="num">0分</div><div class="lbl">情報収集の手作業</div></div>
+      <div class="stat full"><div class="num">生成AI × 業務自動化</div><div class="lbl">情報収集・要約・配信を一気通貫で構築</div></div>
+    </div>
+  </div>
+</section>
 
 <!-- WORKS -->
 <section id="works">
