@@ -62,6 +62,7 @@
   .hero-sub{margin-top:16px;font-size:clamp(17px,2vw,21px);font-weight:700;color:var(--slate)}
   .hero p{margin-top:20px;color:var(--sub);font-size:16px;max-width:520px}
   .hero-cta{display:flex;gap:14px;margin-top:36px}
+  .cta-note{margin-top:14px;color:var(--sub);font-size:13px}
   .btn{padding:14px 30px;border-radius:6px;font-weight:700;font-size:15px;transition:.2s;display:inline-block}
   .btn-p{background:var(--navy);color:#fff}
   .btn-p:hover{background:var(--accent)}
@@ -93,15 +94,39 @@
     transition:.25s;display:flex;flex-direction:column;
   }
   .card:hover{transform:translateY(-5px);box-shadow:0 24px 40px -20px rgba(15,37,64,.3);border-color:#c9d3e6}
-  .thumb{aspect-ratio:9/11;background:#eef1f7;overflow:hidden;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:center}
-  .thumb img{width:100%;height:100%;object-fit:cover;object-position:top}
+  .thumb{aspect-ratio:9/11;background:#eef1f7;overflow:hidden;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:center;padding:18px}
+  .thumb img{width:100%;height:100%;object-fit:cover;object-position:top;border-radius:14px;box-shadow:0 18px 36px -16px rgba(15,37,64,.45),0 0 0 1px rgba(51,65,92,.08)}
   .card-body{padding:22px 24px}
   .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
   .tag{font-size:11px;font-weight:600;color:var(--slate);background:var(--bg-soft);border:1px solid var(--line);border-radius:4px;padding:4px 10px}
   .card h3{font-size:18px;font-weight:700;color:var(--navy)}
   .card p{font-size:14px;color:var(--sub);margin-top:10px}
+  .case-meta{margin-top:16px;border-top:1px solid var(--line);padding-top:16px;display:flex;flex-direction:column;gap:10px}
+  .case-meta .row{display:flex;gap:10px;font-size:13px;line-height:1.6}
+  .case-meta .ck{flex:none;font-weight:700;color:#fff;background:var(--slate);border-radius:4px;padding:1px 8px;height:fit-content;font-size:11px;letter-spacing:.5px}
+  .case-meta .row.result .ck{background:var(--accent)}
+  .case-meta .cv{color:var(--sub)}
   .ph{display:flex;align-items:center;justify-content:center;text-align:center;color:#aab4c8;font-size:14px;padding:24px;height:100%;border:1.5px dashed var(--line);border-radius:10px;background:var(--bg-soft)}
   .ph .plus{font-size:32px;color:#c9d3e6;margin-bottom:6px}
+
+  /* Process */
+  #process{background:#fff}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .step{background:var(--bg-soft);border:1px solid var(--line);border-radius:10px;padding:28px 24px}
+  .step .badge{width:40px;height:40px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;font-size:17px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .step h3{font-size:16px;font-weight:700;color:var(--navy)}
+  .step p{font-size:13px;color:var(--sub);margin-top:8px;line-height:1.7}
+
+  /* Trust signals */
+  #trust{background:var(--bg-soft)}
+  .trust-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:stretch}
+  .trust-box{background:#fff;border:1px solid var(--line);border-radius:12px;padding:32px}
+  .trust-box h3{font-size:13px;letter-spacing:1.5px;color:var(--accent);text-transform:uppercase;font-weight:700;margin-bottom:18px}
+  .tech-chips{display:flex;flex-wrap:wrap;gap:10px}
+  .tech-chips span{font-size:13px;font-weight:600;border:1px solid var(--line);border-radius:6px;padding:8px 14px;color:var(--slate);background:var(--bg-soft)}
+  .trust-box ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+  .trust-box li{display:flex;gap:12px;font-size:14px;color:var(--sub);line-height:1.6}
+  .trust-box li::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:var(--accent);margin-top:8px}
 
   /* About */
   #about{background:var(--bg-soft)}
@@ -136,6 +161,13 @@
   @media(max-width:860px){
     .hero-in,.about{grid-template-columns:1fr;gap:40px}
     .nav ul{display:none}
+    section{padding:56px 0}
+    .hero-in{padding:56px 0}
+    .steps{grid-template-columns:1fr 1fr}
+    .trust-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:520px){
+    .steps{grid-template-columns:1fr}
   }
 </style>
 </head>
@@ -146,6 +178,7 @@
     <div class="logo">AI<span>.</span>Works</div>
     <ul>
       <li><a href="#works">実績</a></li>
+      <li><a href="#process">制作の流れ</a></li>
       <li><a href="#about">私について</a></li>
       <li><a href="#contact">お問い合わせ</a></li>
     </ul>
@@ -163,13 +196,16 @@
       <p>業務自動化・チャットボット・情報配信システム。生成AIを活用し、「人が手を動かしていた作業」を安定して回る仕組みに変える開発を行っています。</p>
       <div class="hero-cta">
         <a href="#works" class="btn btn-p">実績を見る</a>
-        <a href="#contact" class="btn btn-s">お問い合わせ</a>
+        <a href="#process" class="btn btn-s">制作の流れを見る</a>
       </div>
+      <p class="cta-note">相談無料・見積もり無料・しつこい営業はありません。</p>
     </div>
     <div class="hero-visual">
       <div class="stat-row">
-        <div class="stat"><div class="num">100%</div><div class="lbl">自動化された配信</div></div>
+        <div class="stat"><div class="num">毎日</div><div class="lbl">定時に自動プッシュ配信</div></div>
         <div class="stat"><div class="num">24h</div><div class="lbl">無人で稼働</div></div>
+        <div class="stat"><div class="num">複数</div><div class="lbl">カテゴリ別に自動要約</div></div>
+        <div class="stat"><div class="num">0分</div><div class="lbl">情報収集の手作業</div></div>
         <div class="stat full"><div class="num">生成AI × 業務自動化</div><div class="lbl">情報収集・要約・配信を一気通貫で構築</div></div>
       </div>
     </div>
@@ -197,12 +233,51 @@
           </div>
           <h3>Must-Know News 自動配信bot</h3>
           <p>Googleニュースを自動収集し、カテゴリ別に要約してLINEへ毎日プッシュ配信。情報収集の手間をゼロにします。</p>
+          <div class="case-meta">
+            <div class="row"><span class="ck">課題</span><span class="cv">毎朝のニュース確認に手間がかかり、重要な情報を見落とすことも。</span></div>
+            <div class="row"><span class="ck">施策</span><span class="cv">収集 → カテゴリ別要約 → LINE配信を生成AIで一気通貫に自動化。</span></div>
+            <div class="row result"><span class="ck">成果</span><span class="cv">確認時間ゼロ・毎日定時に必要な情報だけが手元に届く状態を実現。</span></div>
+          </div>
         </div>
       </a>
 
       <div class="ph"><div><div class="plus">＋</div>次の実績をここに追加</div></div>
       <div class="ph"><div><div class="plus">＋</div>次の実績をここに追加</div></div>
 
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="k">Process</div>
+      <h2>制作の流れ</h2>
+      <div class="line"></div>
+      <p>ご相談から納品・運用まで、わかりやすい4ステップで進めます。</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="badge">1</div>
+        <h3>ヒアリング</h3>
+        <p>解決したい課題や現状の作業を伺い、自動化できる範囲を整理します。</p>
+      </div>
+      <div class="step">
+        <div class="badge">2</div>
+        <h3>設計・ご提案</h3>
+        <p>実現方法・進め方・概算をご提示。納得いただいてから着手します。</p>
+      </div>
+      <div class="step">
+        <div class="badge">3</div>
+        <h3>開発</h3>
+        <p>小さく作って素早く検証。実際に動く状態を見ながら仕上げます。</p>
+      </div>
+      <div class="step">
+        <div class="badge">4</div>
+        <h3>納品・運用</h3>
+        <p>安定稼働を確認して納品。運用後の調整・改善もご相談いただけます。</p>
+      </div>
     </div>
   </div>
 </section>
@@ -234,6 +309,41 @@
   </div>
 </section>
 
+<!-- TRUST -->
+<section id="trust">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="k">Why me</div>
+      <h2>使用技術と対応範囲</h2>
+      <div class="line"></div>
+      <p>個人開発ながら、実運用に耐える技術と進め方でお応えします。</p>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-box">
+        <h3>使用技術</h3>
+        <div class="tech-chips">
+          <span>生成AI / LLM</span>
+          <span>LINE Messaging API</span>
+          <span>Python</span>
+          <span>スクレイピング / RSS</span>
+          <span>自動要約</span>
+          <span>定期実行 / 自動化</span>
+          <span>ノーコード連携</span>
+        </div>
+      </div>
+      <div class="trust-box">
+        <h3>対応範囲</h3>
+        <ul>
+          <li>情報収集・要約・配信などの業務自動化</li>
+          <li>LINE bot・チャットボットの開発と運用</li>
+          <li>小規模な試作から実運用までワンストップ対応</li>
+          <li>NDA・機密情報の取り扱いにも配慮します</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="wrap">
@@ -241,6 +351,7 @@
       <h2>お仕事のご相談</h2>
       <p>AIを使った自動化・bot開発のご依頼やご相談を承っています。まずはお気軽にご連絡ください。</p>
       <a href="mailto:kazuya.uraisami@gmail.com" class="btn btn-p">メールで問い合わせる</a>
+      <p class="cta-note" style="color:#c2cde0;margin-top:18px">相談無料・見積もり無料・しつこい営業はありません。</p>
     </div>
   </div>
 </section>
@@ -248,9 +359,24 @@
 <footer>
   <div class="wrap foot">
     <div class="logo">AI<span>.</span>Works</div>
-    <div>© 2026 AI.Works Portfolio</div>
+    <div>2026年更新 ・ © 2026 AI.Works Portfolio</div>
   </div>
 </footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "AI.Works ｜ AI開発・業務自動化ポートフォリオ",
+  "url": "https://kazuya-uraisami.github.io/ai-works-portfolio/",
+  "author": {
+    "@type": "Person",
+    "name": "Kazuya Uraisami",
+    "email": "kazuya.uraisami@gmail.com",
+    "jobTitle": "AI開発・業務自動化エンジニア"
+  }
+}
+</script>
 
 </body>
 </html>
