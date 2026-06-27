@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI.Works ｜ AI開発・業務自動化ポートフォリオ</title>
+<meta name="description" content="生成AIを活用した業務自動化・チャットボット・情報配信システムの開発実績ポートフォリオ。人が手を動かしていた作業を、安定して動く仕組みに変えます。">
+<meta name="theme-color" content="#0f2540">
+<link rel="canonical" href="https://kazuya-uraisami.github.io/ai-works-portfolio/">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI.Works ｜ AI開発・業務自動化ポートフォリオ">
+<meta property="og:description" content="生成AIを活用した業務自動化・チャットボット・情報配信システムの開発実績ポートフォリオ。">
+<meta property="og:url" content="https://kazuya-uraisami.github.io/ai-works-portfolio/">
+<meta property="og:image" content="https://kazuya-uraisami.github.io/ai-works-portfolio/image/IMG_5387.PNG">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f2540'/%3E%3Ctext x='50' y='68' font-size='52' font-family='Segoe UI,sans-serif' font-weight='800' text-anchor='middle' fill='%23fff'%3EA%3C/text%3E%3Ccircle cx='74' cy='60' r='7' fill='%231e5eff'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --navy:#0f2540;        /* deep navy */
+    --slate:#33415c;       /* slate accent */
+    --accent:#1e5eff;      /* business blue */
+    --bg:#ffffff;
+    --bg-soft:#f4f6fb;     /* soft section bg */
+    --line:#e2e7f0;
+    --txt:#1a2233;
+    --sub:#5a6478;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:-apple-system,"Segoe UI","Hiragino Kaku Gothic ProN","Noto Sans JP",Meiryo,sans-serif;
+    color:var(--txt);background:var(--bg);line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo{font-weight:800;font-size:20px;letter-spacing:.3px;color:var(--navy)}
+  .logo span{color:var(--accent)}
+  .nav ul{display:flex;gap:36px;list-style:none;font-size:14px;font-weight:600;color:var(--slate)}
+  .nav a:hover{color:var(--accent)}
+  .nav .contact-btn{
+    background:var(--navy);color:#fff;padding:10px 22px;border-radius:6px;font-size:14px;font-weight:600;
+  }
+  .nav .contact-btn:hover{background:var(--accent);color:#fff}
+
+  /* Hero */
+  .hero{background:var(--bg-soft);border-bottom:1px solid var(--line)}
+  .hero-in{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;padding:88px 0}
+  .eyebrow{
+    display:inline-block;font-size:13px;font-weight:700;letter-spacing:1.5px;color:var(--accent);
+    text-transform:uppercase;margin-bottom:20px;
+  }
+  .hero h1{font-size:clamp(30px,4.4vw,48px);line-height:1.3;font-weight:800;color:var(--navy);letter-spacing:-.5px;word-break:keep-all;line-break:strict;overflow-wrap:anywhere}
+  .hero h1 .u{border-bottom:4px solid var(--accent);padding-bottom:2px}
+  .hero-sub{margin-top:16px;font-size:clamp(17px,2vw,21px);font-weight:700;color:var(--slate)}
+  .hero p{margin-top:20px;color:var(--sub);font-size:16px;max-width:520px}
+  .hero-cta{display:flex;gap:14px;margin-top:36px}
+  .btn{padding:14px 30px;border-radius:6px;font-weight:700;font-size:15px;transition:.2s;display:inline-block}
+  .btn-p{background:var(--navy);color:#fff}
+  .btn-p:hover{background:var(--accent)}
+  .btn-s{border:1.5px solid var(--line);color:var(--navy);background:#fff}
+  .btn-s:hover{border-color:var(--navy)}
+  .hero-visual{
+    background:#fff;border:1px solid var(--line);border-radius:12px;padding:28px;
+    box-shadow:0 24px 48px -24px rgba(15,37,64,.25);
+  }
+  .stat-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .stat{padding:18px;border-radius:8px;background:var(--bg-soft)}
+  .stat .num{font-size:30px;font-weight:800;color:var(--navy);line-height:1}
+  .stat .lbl{font-size:13px;color:var(--sub);margin-top:8px}
+  .stat.full{grid-column:1/3}
+
+  /* Section base */
+  section{padding:88px 0}
+  .sec-head{text-align:center;max-width:640px;margin:0 auto 56px}
+  .sec-head .k{font-size:13px;font-weight:700;letter-spacing:2px;color:var(--accent);text-transform:uppercase}
+  .sec-head h2{font-size:32px;font-weight:800;color:var(--navy);margin-top:12px;letter-spacing:-.3px}
+  .sec-head .line{width:48px;height:3px;background:var(--accent);margin:18px auto 0}
+  .sec-head p{color:var(--sub);margin-top:18px;font-size:15px}
+
+  /* Works */
+  #works{background:#fff}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:28px}
+  .card{
+    background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;
+    transition:.25s;display:flex;flex-direction:column;
+  }
+  .card:hover{transform:translateY(-5px);box-shadow:0 24px 40px -20px rgba(15,37,64,.3);border-color:#c9d3e6}
+  .thumb{aspect-ratio:9/11;background:#eef1f7;overflow:hidden;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:center}
+  .thumb img{width:100%;height:100%;object-fit:cover;object-position:top}
+  .card-body{padding:22px 24px}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+  .tag{font-size:11px;font-weight:600;color:var(--slate);background:var(--bg-soft);border:1px solid var(--line);border-radius:4px;padding:4px 10px}
+  .card h3{font-size:18px;font-weight:700;color:var(--navy)}
+  .card p{font-size:14px;color:var(--sub);margin-top:10px}
+  .ph{display:flex;align-items:center;justify-content:center;text-align:center;color:#aab4c8;font-size:14px;padding:24px;height:100%;border:1.5px dashed var(--line);border-radius:10px;background:var(--bg-soft)}
+  .ph .plus{font-size:32px;color:#c9d3e6;margin-bottom:6px}
+
+  /* About */
+  #about{background:var(--bg-soft)}
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .about h2{font-size:30px;font-weight:800;color:var(--navy);letter-spacing:-.3px}
+  .about .k{font-size:13px;font-weight:700;letter-spacing:2px;color:var(--accent);text-transform:uppercase}
+  .about p{color:var(--sub);margin-top:18px;font-size:15px}
+  .skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+  .skill{font-size:13px;font-weight:600;border:1px solid var(--line);border-radius:6px;padding:9px 16px;color:var(--slate);background:#fff}
+  .about-card{background:var(--navy);border-radius:12px;padding:40px;color:#fff}
+  .about-card h4{font-size:13px;letter-spacing:1.5px;color:#8fb0ff;text-transform:uppercase;font-weight:700}
+  .vlist{margin-top:20px;display:flex;flex-direction:column;gap:16px}
+  .vitem{display:flex;gap:14px;align-items:flex-start}
+  .vitem .dot{flex:none;width:8px;height:8px;border-radius:50%;background:var(--accent);margin-top:9px}
+  .vitem .t{font-weight:700;font-size:15px}
+  .vitem .d{font-size:13px;color:#aebdd6;margin-top:2px}
+
+  /* Contact */
+  #contact{background:#fff}
+  .contact{
+    background:var(--navy);border-radius:16px;padding:64px 32px;text-align:center;color:#fff;
+    background-image:radial-gradient(600px 240px at 50% 0%,rgba(30,94,255,.35),transparent 70%);
+  }
+  .contact h2{font-size:30px;font-weight:800;letter-spacing:-.3px}
+  .contact p{color:#c2cde0;margin:16px auto 32px;max-width:480px;font-size:15px}
+  .contact .btn-p{background:#fff;color:var(--navy)}
+  .contact .btn-p:hover{background:var(--accent);color:#fff}
+
+  footer{border-top:1px solid var(--line);padding:36px 0;background:#fff}
+  .foot{display:flex;justify-content:space-between;align-items:center;color:var(--sub);font-size:13px}
+
+  @media(max-width:860px){
+    .hero-in,.about{grid-template-columns:1fr;gap:40px}
+    .nav ul{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo">AI<span>.</span>Works</div>
+    <ul>
+      <li><a href="#works">実績</a></li>
+      <li><a href="#about">私について</a></li>
+      <li><a href="#contact">お問い合わせ</a></li>
+    </ul>
+    <a href="#contact" class="contact-btn">ご相談はこちら</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap hero-in">
+    <div>
+      <span class="eyebrow">AI Development & Automation</span>
+      <h1>業務を、<span class="u">動く仕組み</span>に。</h1>
+      <div class="hero-sub">信頼できるAI開発・自動化パートナー</div>
+      <p>業務自動化・チャットボット・情報配信システム。生成AIを活用し、「人が手を動かしていた作業」を安定して回る仕組みに変える開発を行っています。</p>
+      <div class="hero-cta">
+        <a href="#works" class="btn btn-p">実績を見る</a>
+        <a href="#contact" class="btn btn-s">お問い合わせ</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="stat-row">
+        <div class="stat"><div class="num">100%</div><div class="lbl">自動化された配信</div></div>
+        <div class="stat"><div class="num">24h</div><div class="lbl">無人で稼働</div></div>
+        <div class="stat full"><div class="num">生成AI × 業務自動化</div><div class="lbl">情報収集・要約・配信を一気通貫で構築</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WORKS -->
+<section id="works">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="k">Works</div>
+      <h2>制作実績</h2>
+      <div class="line"></div>
+      <p>実際に開発・運用しているAIプロダクトをご紹介します。</p>
+    </div>
+    <div class="grid">
+
+      <a class="card" href="image/IMG_5387.PNG" target="_blank">
+        <div class="thumb"><img src="image/IMG_5387.PNG" alt="Must-Know News LINE bot"></div>
+        <div class="card-body">
+          <div class="tags">
+            <span class="tag">LINE Bot</span>
+            <span class="tag">自動要約</span>
+            <span class="tag">RSS連携</span>
+          </div>
+          <h3>Must-Know News 自動配信bot</h3>
+          <p>Googleニュースを自動収集し、カテゴリ別に要約してLINEへ毎日プッシュ配信。情報収集の手間をゼロにします。</p>
+        </div>
+      </a>
+
+      <div class="ph"><div><div class="plus">＋</div>次の実績をここに追加</div></div>
+      <div class="ph"><div><div class="plus">＋</div>次の実績をここに追加</div></div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap about">
+    <div>
+      <div class="k">About</div>
+      <h2>私について</h2>
+      <p>生成AIを活用し、日常業務や情報収集を「自動で回る仕組み」に変える開発をしています。小さく作って素早く検証し、実際に現場で使えるプロダクトとして仕上げることを大切にしています。</p>
+      <div class="skills">
+        <span class="skill">生成AI / LLM</span>
+        <span class="skill">LINE / Bot開発</span>
+        <span class="skill">業務自動化</span>
+        <span class="skill">スクレイピング / RSS</span>
+        <span class="skill">Python</span>
+        <span class="skill">ノーコード連携</span>
+      </div>
+    </div>
+    <div class="about-card">
+      <h4>選ばれる理由</h4>
+      <div class="vlist">
+        <div class="vitem"><span class="dot"></span><div><div class="t">実運用までやり切る</div><div class="d">試作で終わらせず、安定稼働する仕組みとして納品します。</div></div></div>
+        <div class="vitem"><span class="dot"></span><div><div class="t">スピード重視</div><div class="d">小さく作って素早く検証。最短で成果を確認できます。</div></div></div>
+        <div class="vitem"><span class="dot"></span><div><div class="t">わかりやすい説明</div><div class="d">専門用語に頼らず、目的と効果を明確にお伝えします。</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact">
+      <h2>お仕事のご相談</h2>
+      <p>AIを使った自動化・bot開発のご依頼やご相談を承っています。まずはお気軽にご連絡ください。</p>
+      <a href="mailto:kazuya.uraisami@gmail.com" class="btn btn-p">メールで問い合わせる</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div class="logo">AI<span>.</span>Works</div>
+    <div>© 2026 AI.Works Portfolio</div>
+  </div>
+</footer>
+
+</body>
+</html>
